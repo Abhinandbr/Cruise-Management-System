@@ -1,0 +1,144 @@
+/* General Styles */
+
+.booking-page {
+  background: linear-gradient(to bottom right, #c3dfff, #6ca4dc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 81vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.booking-container {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  height: 600px;
+  width: 100%;
+}
+
+.booking-container h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  color: #2e86de;
+}
+
+.booking-container p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* cruise image css */
+.cruise-img img {
+  height: 285px;
+  width: 420px;
+  object-fit: cover;
+  margin-top: 5px;
+}
+
+/* Buttons */
+.booking-page .btn-submit,
+.booking-page .btn-resume,
+.booking-page .btn-delete {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  top: 4rem;
+}
+
+/* Button Styles */
+.booking-page .btn-submit {
+  background-color: #2e86de;
+  color: #fff;
+}
+
+.booking-page .btn-submit:hover {
+  background-color: #1c5fa6;
+}
+
+.booking-page .btn-resume {
+  background-color: #28a745;
+  color: white;
+}
+
+.booking-page .btn-resume:hover {
+  background-color: #1e7c33;
+}
+
+.booking-page .btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.booking-page .btn-delete:hover {
+  background-color: #a92832;
+}
+
+/* Modal Styles */
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.booking-modal {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.booking-modal .modal-header h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.booking-modal .modal-body p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.booking-modal .modal-footer button {
+  display: inline-block;
+  margin: 5px;
+}
+
+.booking-modal .close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.booking-modal .close-modal:hover {
+  color: #000;
+}

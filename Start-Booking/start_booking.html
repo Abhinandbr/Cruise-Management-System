@@ -1,0 +1,57 @@
+{% extends 'customer/custabout.html' %} {% load static %} {% block title %}Start
+Booking{% endblock %} {% block about_extra %}
+<main class="booking-page">
+  <div class="booking-container">
+    <h1>Start Your Booking</h1>
+    <p>
+      Begin your exciting cruise booking process by clicking the button below.
+    </p>
+    <!-- cruise image -->
+    <div class="cruise-img">
+      <img src="{% static 'assets/cruise-ship-img.jpg' %}" alt="cruise" />
+    </div>
+
+    <div class="form-action">
+      <a href="{% url 'select-cruise' %}" class="btn-submit"
+        >Start New Booking</a
+      >
+    </div>
+  </div>
+
+  {% if paused_booking %}
+  <div class="booking-modal-overlay">
+    <div class="booking-modal">
+      <div class="modal-header">
+        <h5>Resume or Start New Booking</h5>
+        <button class="close-modal" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          You have an existing paused booking for
+          <strong>{{ paused_booking.cruise.name }}</strong>.
+        </p>
+        <p>Would you like to resume this booking or start a new one?</p>
+      </div>
+      <div class="modal-footer">
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit" name="action" value="resume" class="btn-resume">
+            Resume Booking
+          </button>
+          <button type="submit" name="action" value="delete" class="btn-delete">
+            Start New Booking
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</main>
+<script src="{% static 'javascript/booking.js' %}"></script>
+<script>
+  function closeModal() {
+    const modalOverlay = document.querySelector(".modal-overlay");
+    modalOverlay.style.display = "none";
+  }
+</script>
+{% endblock %}
